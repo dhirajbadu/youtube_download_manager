@@ -44,19 +44,19 @@ class Download:
     def downDefaultAudio(self , link):
         print("da")
         yt = YouTube(link)
-        yt.streams.get_audio_only(subtype="mp4").download(self.getPath())
+        yt.streams.get_audio_only(subtype="mp4").download(output_path=self.getPath())
         print("successfully downloaded")
 
     def downLowQalityAudio(self , link):
         print("la")
         yt = YouTube(link)
-        yt.streams.filter(only_audio=True, subtype="mp4").order_by("abr").desc().last().download(self.getPath())
+        yt.streams.filter(only_audio=True, subtype="mp4").order_by("abr").desc().last().download(output_path=self.getPath())
         print("successfully downloaded")
 
     def downHeighQalityAudio(self, link):
         print("ha")
         yt = YouTube(link)
-        yt.streams.filter(only_audio=True, subtype="mp4").order_by("abr").desc().first().download(self.getPath())
+        yt.streams.filter(only_audio=True, subtype="mp4").order_by("abr").desc().first().download(output_path=self.getPath())
         print("successfully downloaded")
 
 
