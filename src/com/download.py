@@ -1,6 +1,6 @@
 from pytube import YouTube
 import os
-
+from pathlib import Path
 import argparse
 
 
@@ -18,7 +18,6 @@ quality = args.quality
 class Download:
 
     def getPath(self):
-        from pathlib import Path
         home = str(os.path.join(Path.home(), "Downloads"))
         print("downloading....!!")
         print(home)
